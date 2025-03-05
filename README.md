@@ -1,29 +1,14 @@
-# TradeTron
+# Tradetron
 
-A professional Python-based trading system for automated trading strategies.
+A Python package for algorithmic trading with robust data management and analysis capabilities.
 
-## Overview
+## Features
 
-TradeTron is a robust and flexible trading system designed to support various trading strategies, data sources, and execution methods. The system is built with modularity and extensibility in mind, making it easy to add new features and adapt to different market conditions.
-
-## Project Structure
-
-```
-tradetron/
-├── src/                      # Main source code directory
-│   ├── core/                 # Core trading system components
-│   ├── data/                 # Data handling and processing
-│   ├── strategies/           # Trading strategies
-│   ├── models/              # Trading models and algorithms
-│   └── utils/               # Utility functions and helpers
-├── tests/                   # Test directory
-├── docs/                    # Documentation
-├── notebooks/              # Jupyter notebooks for analysis
-├── scripts/                # Utility scripts
-├── config/                 # Configuration files
-├── data/                   # Data directory
-└── logs/                   # Log files
-```
+- Data fetching from Polygon.io API
+- Efficient data caching and storage
+- OHLCV data processing
+- Technical analysis indicators
+- Market data validation
 
 ## Installation
 
@@ -33,7 +18,7 @@ git clone https://github.com/yourusername/tradetron.git
 cd tradetron
 ```
 
-2. Create a virtual environment (recommended):
+2. Create and activate a virtual environment:
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
@@ -44,30 +29,68 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
+4. Set up your environment variables:
+```bash
+cp .env.example .env
+# Edit .env with your API keys
+```
+
+## Project Structure
+
+```
+tradetron/
+├── config/             # Configuration files
+├── data/              # Data storage
+│   ├── processed/     # Processed data files
+│   └── raw/          # Raw data files
+├── docs/              # Documentation
+├── examples/          # Example scripts
+├── src/               # Source code
+│   └── tradetron/
+│       └── data/     # Data management module
+├── tests/             # Test files
+└── notebooks/         # Jupyter notebooks
+```
+
 ## Usage
 
-[Add usage instructions once the core functionality is implemented]
+```python
+from tradetron.data.storage.data_manager import DataManager
+from tradetron.data.config import DataConfig
+
+# Initialize
+config = DataConfig(POLYGON_API_KEY='your-api-key')
+manager = DataManager(config)
+
+# Fetch data
+data = manager.get_daily_data('AAPL', start_date, end_date)
+```
 
 ## Development
 
-To contribute to the project:
-
-1. Create a new branch for your feature
-2. Make your changes
-3. Write tests for new functionality
-4. Submit a pull request
-
-## Testing
-
-Run tests using:
+1. Install development dependencies:
 ```bash
-python -m pytest tests/
+pip install -e ".[dev]"
 ```
 
-## License
-
-[Add your chosen license]
+2. Run tests:
+```bash
+pytest
+```
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- [Polygon.io](https://polygon.io/) for providing market data
+- Contributors and maintainers
