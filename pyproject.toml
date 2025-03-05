@@ -1,14 +1,76 @@
 [build-system]
-requires = ["setuptools>=42", "wheel"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [project]
 name = "tradetron"
 version = "0.1.0"
-description = "A Python trading system"
+description = "A Python package for algorithmic trading with robust data management"
 readme = "README.md"
 requires-python = ">=3.8"
 license = {text = "MIT"}
 authors = [
     {name = "Your Name", email = "your.email@example.com"},
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Financial and Insurance Industry",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+]
+dependencies = [
+    "numpy>=1.21.0",
+    "pandas>=1.3.0",
+    "polygon-api-client>=1.0.0",
+    "python-dateutil>=2.8.2",
+    "pytz>=2021.1",
+    "requests>=2.26.0",
+    "ta>=0.7.0",
+    "python-dotenv>=0.19.0",
+    "pydantic>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.2.5",
+    "pytest-cov>=2.12.0",
+    "black>=21.6b0",
+    "flake8>=3.9.0",
+    "isort>=5.9.0",
+    "mypy>=1.0.0",
+]
+docs = [
+    "sphinx>=4.0.0",
+    "sphinx-rtd-theme>=1.0.0",
+]
+notebook = [
+    "jupyter>=1.0.0",
+    "notebook>=6.4.0",
+]
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q --cov=tradetron"
+testpaths = [
+    "tests",
 ] 
