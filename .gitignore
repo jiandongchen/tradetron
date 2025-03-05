@@ -1,0 +1,160 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Python bytecode
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# C extensions
+*.so
+*.dylib
+*.dll
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.env
+.venv
+env.bak/
+venv.bak/
+pythonenv*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+.project
+.pydevproject
+.settings/
+.vs/
+.atom/
+.vscode-test/
+
+# Project specific
+data/cache/
+logs/
+*.log
+.env.local
+.env.*.local
+.env.development
+.env.test
+.env.production
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+profile_default/
+ipython_config.py
+
+# Testing
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+htmlcov/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Documentation
+docs/_build/
+docs/generated/
+
+# Backup files
+*.bak
+*.tmp
+*~
+*.swp
+*.swo
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Compiled files
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.dll
+*.dylib
+*.class
+*.exe
+*.o
+*.a
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+*.sqlite3
+*.db
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Keep specific empty directories
+!.gitkeep
